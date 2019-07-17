@@ -41,7 +41,7 @@
                              disabled="#{jsfPaginationBean.firstRow + jsfPaginationBean.rowsPerPage &gt;= jsfPaginationBean.totalRows}" />
             <h:outputText value="&amp;nbsp;" escape="false"/>
             <h:commandButton value="last" action="#{jsfPaginationBean.pageLast}"
-                             disabled="#{jsfPaginationBean.firstRow + myBean.rowsPerPage &gt;= jsfPaginationBean.totalRows}" />
+                             disabled="#{jsfPaginationBean.firstRow + jsfPaginationBean.rowsPerPage &gt;= jsfPaginationBean.totalRows}" />
             <h:outputText value="&amp;nbsp;" escape="false"/>
             <h:outputText value="Page #{jsfPaginationBean.currentPage} / #{jsfPaginationBean.totalPages}" />
             <br />
