@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>JSF 2.2 - immediate attribute example</title>
+</h:head>
+<h:body>
+    <h2>Register yourself</h2>
+    <h:form>
+        <h:panelGrid>
+            <h:panelGroup>
+                <h:messages style="color:red" />
+            </h:panelGroup>
+            <h:outputText value="Name" />
+            <h:inputText value="#{registrationBean.name}" required="true"
+                requiredMessage="Enter your full name" />
+            <h:outputText value="Gender" />
+            <h:selectOneRadio required="true"
+                requiredMessage="Select your gender">
+                <f:selectItem itemValue="Male" itemLabel="Male" />
+                <f:selectItem itemValue="Female" itemLabel="Female" />
+            </h:selectOneRadio>
+            <h:outputText value="Date of Birth" />
+            <h:inputText value="#{registrationBean.dateOfBirth}" required="true"
+                requiredMessage="Your Date of Birth" />
+            <h:outputText value="Email" />
+            <h:inputText value="#{registrationBean.emailAddress}" required="true"
+                requiredMessage="Your valid email address" />
+            <h:panelGroup>
+                <h:commandButton value="Register"
+                    action="#{registrationBean.register}" />
+                <h:commandButton value="Cancel"
+                    action="/index.jsf?faces-redirect=true" immediate="true"/>
+            </h:panelGroup>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>
