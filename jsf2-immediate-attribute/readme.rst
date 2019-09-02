@@ -1,0 +1,1 @@
+You can read tutorial https://www.jeejava.com/immediate-attribute-example-in-jsf/
