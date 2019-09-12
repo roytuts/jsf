@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>JSF 2 - view expired exception solution</title>
+</h:head>
+<h:body>
+    <h2>Please login here</h2>
+    <p>
+        <!-- show success/error message. escape="false" for outputting the html as html in the view otherwise it will not parse the html tags -->
+        <h:outputText value="#{loginMBean.message}"
+            rendered="#{!empty loginMBean.message}" escape="false"/>
+        <h:form prependId="false">
+            <h:panelGrid>
+                <!-- username label -->
+                <h:outputLabel>Username:</h:outputLabel>
+                <!-- username input binding to backing bean property -->
+                <h:inputText value="#{loginMBean.username}"></h:inputText>
+                <!-- password label -->
+                <h:outputLabel>Password:</h:outputLabel>
+                <!-- password input binding to backing bean property -->
+                <h:inputSecret value="#{loginMBean.password}"></h:inputSecret>
+                <!-- login action binding to backing bean action method -->
+                <h:commandButton action="#{loginMBean.doLogin()}" value="Login" />
+            </h:panelGrid>
+        </h:form>
+    </p>
+</h:body>
+</html>

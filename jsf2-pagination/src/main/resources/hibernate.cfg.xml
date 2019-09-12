@@ -12,6 +12,6 @@
 		<property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
-		<mapping class="com.jeejava.jsf.hibernate.domain.Cds" />
+		<mapping class="com.roytuts.jsf.hibernate.domain.Cds" />
 	</session-factory>
 </hibernate-configuration>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>JSF 2 - view expired exception solution</title>
+</h:head>
+<h:body>
+    <h:form prependId="false">
+        <p>To protect your security, we have taken the liberty of logging
+            you out.</p>
+        <p>
+            <!-- We previously put the view, where ViewExpiredException occurred, in "currentViewId" variable -->
+            You were on page <span style="color: blue; font-weight: bold;">#{currentViewId}</span>.
+        </p>
+        <p>
+            <!-- Give user a link to go back to the appropriate page when ViewExpired occurrs -->
+            Please
+            <h:commandLink action="index.jsf?faces-redirect=true">Click Here</h:commandLink>
+            to go back to the Login page.
+        </p>
+    </h:form>
+</h:body>
+</html>

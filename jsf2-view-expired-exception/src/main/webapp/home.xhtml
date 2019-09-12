@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>JSF 2 - view expired exception solution</title>
+</h:head>
+<h:body>
+    <h2>
+        <!-- show this message upon successful login -->
+        <span style="color: green;">You have successfully logged in</span>. <span
+            style="color: blue;">Welcome to your private area</span>
+    </h2>
+    <p>
+        <h:form prependId="false" rendered="#{!empty sessionScope.username}">
+            <!-- show this message upon successful login. #{sessionScope.username} - access session variable in view -->
+            <h:outputText
+                value="Welcome &lt;span style='color:green;'&gt;#{sessionScope.username}&lt;/span&gt;"
+                escape="false" />
+            <!-- show this logout link upon successful login -->
+            <h:commandLink action="#{loginMBean.doLogout()}">Logout</h:commandLink>
+        </h:form>
+    </p>
+</h:body>
+</html>
