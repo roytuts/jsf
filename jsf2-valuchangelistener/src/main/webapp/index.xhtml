@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>JSF 2.2 Dependent Dropdown (ValueChangeListener) Example</title>
+</h:head>
+<h:body>
+	<h2>Dependent Dropdown or ComboBox Example - JSF 2.2 ValueChangeListener</h2><br/>
+	<h:form prependid="false">
+		<!-- html table having only one column -->
+		<h:panelGrid columns="1">
+			<!-- check category list not empty -->
+			<h:panelGroup rendered="#{!empty dependentDropdownMBean.categories}">
+				Category:
+				<h:selectOneMenu value="#{dependentDropdownMBean.category}"
+					onchange="submit()"
+					valueChangeListener="#{dependentDropdownMBean.onCategorySelect}">
+					<f:selectItems value="#{dependentDropdownMBean.categories}" var="cat"
+						itemLabel="#{cat.name}" itemValue="#{cat.id}"></f:selectItems>
+				</h:selectOneMenu>
+			</h:panelGroup>
+			<!-- check sub-category list not empty -->
+			<h:panelGroup rendered="#{!empty dependentDropdownMBean.subCategories}">
+				Sub-category:
+				<h:selectOneMenu value="#{dependentDropdownMBean.subCategory}"
+					onchange="submit()"
+					valueChangeListener="#{dependentDropdownMBean.onSubcategorySelect}">
+					<f:selectItems value="#{dependentDropdownMBean.subCategories}" var="subCat"
+						itemLabel="#{subCat.name}" itemValue="#{subCat.id}"></f:selectItems>
+				</h:selectOneMenu>
+			</h:panelGroup>
+			<!-- if number of tutorial found for the category/subcategory then print -->
+			<h:panelGroup rendered="#{dependentDropdownMBean.noOfTutorials gt 0}">
+				No. of Tutorials: #{dependentDropdownMBean.noOfTutorials}
+			</h:panelGroup>
+			<!-- if number of tutorial not found for the category/subcategory then print -->
+			<h:panelGroup rendered="#{dependentDropdownMBean.noOfTutorials lt 0}">
+				No tutorial found for this category!
+			</h:panelGroup>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

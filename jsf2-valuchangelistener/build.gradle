@@ -1,0 +1,19 @@
+plugins {
+	id 'war'
+    id 'java-library'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.sun.faces:jsf-api:2.2.20'
+    implementation 'com.sun.faces:jsf-impl:2.2.20'
+    implementation 'javax.enterprise:cdi-api:2.0.SP1'
+    
+    implementation 'mysql:mysql-connector-java:8.0.17'
+    
+    //required for JDK 9 or above
+    implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
+}
