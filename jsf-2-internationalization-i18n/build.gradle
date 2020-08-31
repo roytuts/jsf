@@ -1,0 +1,14 @@
+plugins {
+	id 'war'
+    id 'java-library'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.sun.faces:jsf-api:2.2.20'
+    implementation 'com.sun.faces:jsf-impl:2.2.20'
+    implementation 'javax.enterprise:cdi-api:2.0.SP1'    
+}

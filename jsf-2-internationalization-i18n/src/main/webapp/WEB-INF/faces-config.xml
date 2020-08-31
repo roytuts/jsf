@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+	<application>
+		<!-- locale configuration -->
+		<locale-config>
+			<!-- default locale and supported locales -->
+			<default-locale>en</default-locale>
+			<supported-locale>bn</supported-locale>
+			<supported-locale>hi</supported-locale>
+			<supported-locale>nl</supported-locale>
+			<supported-locale>fr</supported-locale>
+		</locale-config>
+		
+		<!-- resource bundle configuration -->
+		<resource-bundle>
+			<!-- properties file base name with full package -->
+			<base-name>
+				Messages
+			</base-name>
+			<!-- properties file key will be accessed using this variable #{msg.keyName}, 
+				where keyName is the property file key -->
+			<var>msg</var>
+		</resource-bundle>
+	</application>
+</faces-config>

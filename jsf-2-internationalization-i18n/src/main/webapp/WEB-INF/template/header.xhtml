@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+	<ui:composition>
+		<h:form prependId="false">
+			<h:panelGrid columns="3">
+				<h:outputText value="#{msg.i18n}" />
+				<h:outputLabel>&nbsp;|&nbsp;</h:outputLabel>
+				<h:panelGroup>
+					<h:outputText value="#{msg.chooseLang}" />
+					<h:selectOneMenu value="#{localeSwitcher.language}"
+						onchange="submit()" style="margin-left:5px;"
+						valueChangeListener="#{localeSwitcher.onLanguageChange}">
+						<f:selectItem itemValue="bn" itemLabel="বাংলা" />
+						<f:selectItem itemValue="hi" itemLabel="हिंदी" />
+						<f:selectItem itemValue="en" itemLabel="English" />
+						<f:selectItem itemValue="nl" itemLabel="Nederlands" />
+						<f:selectItem itemValue="fr" itemLabel="Français" />
+					</h:selectOneMenu>
+				</h:panelGroup>
+			</h:panelGrid>
+		</h:form>
+	</ui:composition>
+</body>
+</html>
