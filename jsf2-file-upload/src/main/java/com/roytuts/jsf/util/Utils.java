@@ -2,7 +2,7 @@ package com.roytuts.jsf.util;
 
 import javax.servlet.http.Part;
 
-public class Utils {
+public final class Utils {
 
 	private Utils() {
 	}

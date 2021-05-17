@@ -54,7 +54,7 @@ public class FileUploadMBean implements Serializable {
 		ServletContext servletContext = (ServletContext) context.getExternalContext().getContext();
 		String path = servletContext.getRealPath("");
 		boolean file1Success = false;
-		if (file1.getSize() > 0) {
+		if (file1 != null && file1.getSize() > 0) {
 			String fileName = Utils.getFileNameFromPart(file1);
 			/**
 			 * destination where the file will be uploaded
@@ -76,7 +76,7 @@ public class FileUploadMBean implements Serializable {
 			file1Success = true;
 		}
 		boolean file2Success = false;
-		if (file2.getSize() > 0) {
+		if (file2 != null && file2.getSize() > 0) {
 			String fileName = Utils.getFileNameFromPart(file2);
 			File outputFile = new File(path + File.separator + "WEB-INF" + File.separator + fileName);
 			inputStream = file2.getInputStream();
