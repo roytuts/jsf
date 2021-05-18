@@ -54,7 +54,7 @@ public class FileUploadMBean implements Serializable {
 			/**
 			 * destination where the file will be uploaded
 			 */
-			File savedFile = new File("C:/eclipse_2021_03_R/jsf2-file-upload", fileName);
+			File savedFile = new File("/jsf2-file-upload", fileName);
 
 			// System.out.println("savedFile.toPath(): " + savedFile.toPath());
 
@@ -71,7 +71,7 @@ public class FileUploadMBean implements Serializable {
 
 		if (file2 != null && file2.getSize() > 0) {
 			String fileName = Utils.getFileNameFromPart(file2);
-			File savedFile = new File("C:/eclipse_2021_03_R/jsf2-file-upload", fileName);
+			File savedFile = new File("/jsf2-file-upload", fileName);
 
 			System.out.println(savedFile.getAbsolutePath());
 
