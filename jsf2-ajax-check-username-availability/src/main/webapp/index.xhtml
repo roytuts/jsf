@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>JSF 2.2 AJAX Example</title>
+</h:head>
+<h:body>
+	<h2>JSF 2 AJAX Example</h2>
+	<br />
+	<h:form prependid="false">
+		<!-- html table having only one column -->
+		<h:panelGrid columns="1">
+			<h:panelGroup>
+				<h:messages style="color:red" />
+			</h:panelGroup>
+			<h:outputText value="Input Username:" />
+			<h:inputText value="#{userMBean.userName}" required="true"
+				requiredMessage="Type to check username is available or not">
+				<f:ajax onevent="onblur" render="msg"
+					listener="#{userMBean.isUserNameAvailable()}" />
+			</h:inputText>
+			<h:panelGroup>
+				<h:outputLabel id="msg" value="#{userMBean.msg}" escape="false" />
+			</h:panelGroup>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
