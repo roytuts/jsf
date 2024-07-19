@@ -1,1 +1,1 @@
-You can read tutorial https://www.roytuts.com/immediate-attribute-example-in-jsf/
+Please follow the tutorial https://roytuts.com/immediate-attribute-example-in-jsf/
