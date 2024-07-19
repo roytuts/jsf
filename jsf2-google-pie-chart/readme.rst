@@ -1,1 +1,1 @@
-You can go through the tutorial https://www.roytuts.com/google-chart-using-jsf/
+Please follow the tutorial https://roytuts.com/google-chart-using-jsf/
