@@ -1,1 +1,1 @@
-You can go through the tutorial https://www.roytuts.com/valuechangelistener-example-in-jsf-2/
+Please follow the tutorial https://roytuts.com/valuechangelistener-example-in-jsf-2/
